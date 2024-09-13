@@ -33,20 +33,22 @@ public function verificarCPF(){
                 . " alert('CPF ja Cadastrado!');"
                 . " window.location.href='interface/aluno.php?opcao=2'; </script>";
             }else{
+                echo "entrou em else para cadastrar";
                 Aluno::cadastrar();
             }
-}else{
+        }else{
             echo "<script>"
                 . " alert('Erro, informe o Adm!');"
                 . " window.location.href='interface/aluno.php?opcao=2'; </script>";
         }
 }
     public function cadastrar() {
-        
+        echo " entrou em cadastrar";
     try{
         $pdo = Database::conexao();
-        $con = $pdo->prepare("INSERT INTO `aluno` (`idAluno`, `cpf`, `nome`, `nascimento`,`sexo`, `endereco`, `fone`, `email`, `serie`, `turma`, `turno`, `situacao`) VALUES (NULL, :cpf, :nome, :nascimento, :sexo, :endereco, :fone, :email, :serie, :turma, :turno, :situacao);");   
-        
+        echo " \n conectou";
+        $con = $pdo->prepare("INSERT INTO `aluno` (`idAluno`, `cpf`, `nome`, `nascimento`,`sexo`, `endereco`, `fone`, `email`, `serie`, `turma`, `turno`, `situacao`) VALUES (NULL, :cpf, :nome, :nascimento, :sexo, :endereco, :fone, :email, :serie, :turma, :turno, :situacao)");   
+        echo "\n passou con";
         $con->bindValue(":cpf", $this->cpf);
         $con->bindValue(":nome", $this->nome);
         $con->bindValue(":nascimento", $this->nascimento);
@@ -58,8 +60,9 @@ public function verificarCPF(){
         $con->bindValue(":turma", $this->turma);
         $con->bindValue(":turno", $this->turno);
         $con->bindValue(":situacao", $this->situacao);
-        
+        echo "\n passou dados cadastro";
         if ($con->execute()){
+            echo " \nentrou no exec";
             if($con->rowCount() > 0){
                 echo "<script>"
                 . " alert('Aluno Cadastrado com sucesso!');"
@@ -70,6 +73,7 @@ public function verificarCPF(){
                 . " window.location.href='interface/aluno.php?opcao=2'; </script>";
             }
         }else{
+            echo "\n entrou no else do exec";
             return false;
         }
         

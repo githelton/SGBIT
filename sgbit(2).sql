@@ -50,8 +50,8 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 --
 
 INSERT INTO `aluno` (`idAluno`, `cpf`, `nome`, `nascimento`, `sexo`, `endereco`, `fone`, `email`, `serie`, `turma`, `turno`, `situacao`) VALUES
-(2, '01135280274', 'Paulinha Guimaraes Neves', '1999-06-07', 'F', 'rua esperança, 2019 - Flores', '92 991217168', 'paulinha@gmail.com', '8', '1', 'vespertino', ''),
-(3, '01135280485', 'Claudio Barros', '1989-08-19', 'M', 'rua Flocos, 215 - Adrianopolis', '92995481548', 'cbarros@2gmail.com', '8', '2', 'vespertino', ''),
+(2, '12345', 'Paulinha Guimaraes Neves', '1999-06-07', 'F', 'rua esperança, 2019 - Flores', '92 991217168', 'paulinha@gmail.com', '8', '1', 'vespertino', ''),
+(3, '23456', 'Claudio Barros', '1989-08-19', 'M', 'rua Flocos, 215 - Adrianopolis', '92995481548', 'cbarros@2gmail.com', '8', '2', 'vespertino', ''),
 (5, '15648516845', 'Helton', '1989-08-19', 'M', 'rua mario andreaza, 432 - Jauary', '92995485219', 'heltoname@gmail.com', '1', '1', 'noturno', ''),
 (6, '000005', 'anderson', '1990-09-10', '', '545645', '4545645', 'a@123.com', '1', '1', '123', 'Em dia'),
 (8, '10101010', 'Helton Rodrigues', '2019-09-11', 'M', 'rua guimaraes', '92919458', 'a@123.com', '1', '2', 'Vespertino', 'Em dia'),
